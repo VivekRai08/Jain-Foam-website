@@ -17,6 +17,13 @@ export default function Gallery() {
   useEffect(() => {
     setIsVisible(true);
 
+    // Check for filter in URL params
+    const params = new URLSearchParams(window.location.search);
+    const filter = params.get('filter');
+    if (filter && filters.includes(filter)) {
+      setSelectedFilter(filter);
+    }
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -35,7 +42,7 @@ export default function Gallery() {
     return () => observer.disconnect();
   }, []);
 
-  const filters = ["All", "Curtains", "Sofas", "Wallpapers", "Mattresses", "Flooring"];
+  const filters = ["All", "Mattresses", "Curtains", "Sofas", "Wallpapers", "Carpets", "Blinds"];
 
   const galleryItems = [
     { id: 1, image: heroImage, category: "Sofas", title: "Luxury Living Room Setup" },
@@ -43,7 +50,7 @@ export default function Gallery() {
     { id: 3, image: curtainsImage, category: "Curtains", title: "Elegant Designer Curtains" },
     { id: 4, image: sofaImage, category: "Sofas", title: "Modern Comfort Sofa" },
     { id: 5, image: wallpaperImage, category: "Wallpapers", title: "3D Geometric Wallpaper" },
-    { id: 6, image: flooringImage, category: "Flooring", title: "PVC Wood Texture Flooring" },
+    { id: 6, image: flooringImage, category: "Carpets", title: "PVC Wood Texture Flooring" },
     { id: 7, image: curtainsImage, category: "Curtains", title: "Custom Stitched Curtains" },
     { id: 8, image: wallpaperImage, category: "Wallpapers", title: "Imported Designer Wallpaper" },
     { id: 9, image: sofaImage, category: "Sofas", title: "Contemporary Sectional Sofa" },

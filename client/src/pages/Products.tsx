@@ -187,6 +187,13 @@ export default function Products() {
               </Card>
             ))}
           </div>
+          <div className="text-center mt-8">
+            <Link href="/gallery" onClick={() => window.scrollTo(0, 0)}>
+              <Button size="lg" data-testid="button-view-gallery">
+                View Our Gallery
+              </Button>
+            </Link>
+          </div>
         </div>
       </section>
 

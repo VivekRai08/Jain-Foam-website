@@ -94,7 +94,7 @@ export default function Home() {
             Discover premium home décor essentials at Jain Foam & Furnishing — the most trusted furnishing shop in Bhayandar East for over 30 years. From luxury mattresses to custom-made sofas, wallpapers, carpets, and blinds, we help you transform your home with quality and style.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/products">
+            <Link href="/products" onClick={() => window.scrollTo(0, 0)}>
               <Button
                 size="lg"
                 className="bg-white/90 backdrop-blur-sm text-foreground hover:bg-white border-2 border-white/50"
@@ -104,7 +104,7 @@ export default function Home() {
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
             </Link>
-            <Link href="/contact">
+            <Link href="/contact" onClick={() => window.scrollTo(0, 0)}>
               <Button
                 size="lg"
                 className="bg-white text-gray-900 hover:bg-gray-100 border-2 border-white"
@@ -157,7 +157,7 @@ export default function Home() {
           </div>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
             {categories.map((category, index) => (
-              <Link key={index} href="/products">
+              <Link key={index} href={`/gallery?filter=${category.name}`} onClick={() => window.scrollTo(0, 0)}>
                 <Card
                   className="hover-elevate active-elevate-2 transition-all duration-300 cursor-pointer"
                   data-testid={`card-category-${index}`}
@@ -173,7 +173,7 @@ export default function Home() {
             ))}
           </div>
           <div className="text-center mt-8">
-            <Link href="/products">
+            <Link href="/products" onClick={() => window.scrollTo(0, 0)}>
               <Button size="lg" data-testid="button-view-all">
                 View All Products
                 <ArrowRight className="ml-2 w-5 h-5" />
@@ -192,12 +192,12 @@ export default function Home() {
                 Bhayandar's Most Trusted Furnishing Shop Since 1995
               </h2>
               <p className="text-muted-foreground leading-relaxed mb-6">
-                Jain Foam & Furnishing has been Bhayandar's leading home décor and furnishing destination since 1995. With thousands of happy customers across Bhayandar, Mira Road, and Dahisar, we specialize in high-quality mattresses, curtains, wallpapers, PVC flooring, sofa repair, and custom furnishing solutions.
+                Jain Foam & Furnishing has been Bhayandar's leading home décor and furnishing destination since 1995. With thousands of happy customers all across Mumbai, we specialize in high-quality mattresses, curtains, wallpapers, PVC flooring, sofa repair, and custom furnishing solutions.
               </p>
               <p className="text-muted-foreground leading-relaxed mb-6">
                 Our 30+ years of experience, customer-first approach, and wide product range make us the most trusted furnishing shop in the Mira-Bhayandar region.
               </p>
-              <Link href="/about">
+              <Link href="/about" onClick={() => window.scrollTo(0, 0)}>
                 <Button variant="outline" data-testid="button-learn-more">
                   Learn More About Us
                   <ArrowRight className="ml-2 w-5 h-5" />
@@ -225,7 +225,7 @@ export default function Home() {
             Visit our showroom or get in touch with us today for expert guidance and premium quality products
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/contact">
+            <Link href="/contact" onClick={() => window.scrollTo(0, 0)}>
               <Button
                 size="lg"
                 variant="secondary"

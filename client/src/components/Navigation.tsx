@@ -42,7 +42,7 @@ export function Navigation() {
             </span>
           </div>
           <div className="flex items-center gap-2">
-            <span className="text-primary-foreground/80">Same-Day Delivery Available</span>
+            <span className="text-primary-foreground/80"><b>30+ years of trust</b></span>
           </div>
         </div>
       </div>
